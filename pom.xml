@@ -21,6 +21,46 @@
         <java.version>11</java.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>hello_world</id>
+            <properties>
+                <spring.boot.mainclass>io.example.spring.hello_world.App</spring.boot.mainclass>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>publish_subscribe</id>
+            <properties>
+                <spring.boot.mainclass>io.example.spring.publish_subscribe.App</spring.boot.mainclass>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>routing</id>
+            <properties>
+                <spring.boot.mainclass>io.example.spring.routing.App</spring.boot.mainclass>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>topics</id>
+            <properties>
+                <spring.boot.mainclass>io.example.spring.topics.App</spring.boot.mainclass>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>work_queues</id>
+            <properties>
+                <spring.boot.mainclass>io.example.spring.work_queues.App</spring.boot.mainclass>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -48,10 +88,16 @@
     </dependencies>
 
     <build>
+        <finalName>rabbitmq</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
+                <configuration>
+                    <mainClass>${spring.boot.mainclass}</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

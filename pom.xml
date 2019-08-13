@@ -8,7 +8,7 @@
     <artifactId>java-spring-rabbitmq-example</artifactId>
     <version>0.0.1</version>
     <name>spring-rabbitmq</name>
-    <description>Demo project for Spring Boot RabbitMQ</description>
+    <description>Sample project demonstrating RabbitMQ usage with Java and Spring</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

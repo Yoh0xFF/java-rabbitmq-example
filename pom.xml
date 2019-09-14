@@ -7,7 +7,7 @@
     <groupId>io.example</groupId>
     <artifactId>java-spring-rabbitmq-example</artifactId>
     <version>0.0.1</version>
-    <name>spring-rabbitmq</name>
+    <name>java-rabbitmq-example</name>
     <description>Sample project demonstrating RabbitMQ usage with Java and Spring</description>
 
     <parent>

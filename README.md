@@ -1,2 +1,2 @@
-# Java Spring RabbitMQ Example
-Sample project demonstrating RabbitMQ usage with Java and Spring
+# Java RabbitMQ Example
+Sample project demonstrating RabbitMQ usage with Java

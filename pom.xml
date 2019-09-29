@@ -4,11 +4,23 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>io.example</groupId>
     <artifactId>java-spring-rabbitmq-example</artifactId>
-    <version>0.0.1</version>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
     <name>java-rabbitmq-example</name>
     <description>Sample project demonstrating RabbitMQ usage with Java and Spring</description>
+
+    <modules>
+        <module>rabbitmq-basics</module>
+        <module>rabbitmq-spring-basics</module>
+    </modules>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -16,90 +28,5 @@
         <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
-    <profiles>
-        <profile>
-            <id>hello_world</id>
-            <properties>
-                <spring.boot.mainclass>io.example.spring.hello_world.App</spring.boot.mainclass>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-
-        <profile>
-            <id>publish_subscribe</id>
-            <properties>
-                <spring.boot.mainclass>io.example.spring.publish_subscribe.App</spring.boot.mainclass>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>routing</id>
-            <properties>
-                <spring.boot.mainclass>io.example.spring.routing.App</spring.boot.mainclass>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>topics</id>
-            <properties>
-                <spring.boot.mainclass>io.example.spring.topics.App</spring.boot.mainclass>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>work_queues</id>
-            <properties>
-                <spring.boot.mainclass>io.example.spring.work_queues.App</spring.boot.mainclass>
-            </properties>
-        </profile>
-    </profiles>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>rabbitmq</finalName>
-
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-
-                <configuration>
-                    <mainClass>${spring.boot.mainclass}</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
